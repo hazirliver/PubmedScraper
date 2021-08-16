@@ -29,7 +29,7 @@ add_medline <- function(data_table, output_filename_base, type)
 
   # Чистим временные файлы
   rm_cmd1 <- paste0("rm ", output_filename_base, "_", type, ".tsv")
-  rm_cmd1 <- paste0("rm ", output_filename_base, "_", type, ".lst")
+  rm_cmd2 <- paste0("rm ", output_filename_base, "_", type, ".lst")
 
   system(rm_cmd1)
   system(rm_cmd2)
