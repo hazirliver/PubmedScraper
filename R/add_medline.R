@@ -2,7 +2,7 @@
 #' @description Supplements the \code{data_table} with additional information from the Medline database.
 #'
 #' @importFrom utils read.csv write.table
-#' @importFrom reticulate use_virtualenv source_python
+#' @importFrom reticulate use_python source_python
 #'
 #' @param data_table A data.frame that will supplement with additional Medline information.
 #' @param venv A character specifies your python's venv in which installed biopython and pandas.
