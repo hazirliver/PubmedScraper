@@ -4,12 +4,10 @@
 \alias{add_medline}
 \title{Adding additional Medline info}
 \usage{
-add_medline(data_table, venv)
+add_medline(data_table)
 }
 \arguments{
 \item{data_table}{A data.frame that will supplement with additional Medline information.}
-
-\item{venv}{A character specifies your python's venv in which installed biopython and pandas.}
 }
 \value{
 A data.frame with merged additional Medline info

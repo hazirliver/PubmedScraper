@@ -5,7 +5,6 @@
 #' @importFrom reticulate use_python source_python
 #'
 #' @param data_table A data.frame that will supplement with additional Medline information.
-#' @param venv A character specifies your python's venv in which installed biopython and pandas.
 #'
 #' @return A data.frame with merged additional Medline info
 #'
