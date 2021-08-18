@@ -6,6 +6,8 @@
 #' @param n_cites_threshold An integer. The minimum number of papers that a given article should refer to.
 #' @param n_refers_treshold An integer. The minimum number of papers that a given article should refer to.
 #'
+#' @import reticulate
+#'
 #' @return List of two data.frame's. First -- about papers that cites given \code{PMID_list}, second -- about papers on which refer given \code{PMID_list}.
 #' @export
 #'
