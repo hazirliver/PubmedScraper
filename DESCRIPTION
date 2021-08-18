@@ -15,6 +15,7 @@ Imports:
     igraph,
     rentrez,
     reshape2,
+    reticulate,
     stringr
 RoxygenNote: 7.1.1
 Suggests: 

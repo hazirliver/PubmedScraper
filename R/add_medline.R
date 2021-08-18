@@ -2,37 +2,26 @@
 #' @description Supplements the \code{data_table} with additional information from the Medline database.
 #'
 #' @importFrom utils read.csv write.table
+#' @importFrom reticulate use_virtualenv source_python
 #'
 #' @param data_table A data.frame that will supplement with additional Medline information.
-#' @param output_filename_base A character same as filename_base from \code{\link{scrap_pubmed}}
-#' @param type Either cited_by either references to specify data.frame.
+#' @param venv A character specifies your python's venv in which installed biopython and pandas.
 #'
 #' @return A data.frame with merged additional Medline info
 #'
 #'
-add_medline <- function(data_table, output_filename_base, type)
+add_medline <- function(data_table, venv)
 {
-  data_table %>%
-    pull(PMID) %>%
-    write.table(paste0(output_filename_base, "_", type, ".lst"), quote = F, row.names = F, col.names = F)
+  local_PMID <- data_table %>%
+    pull(PMID)
 
-  # Обращаемся к питону из виртуального окружения, куда установлен pandas и biopython
-  user_name <- system('echo "$USER"', intern = T)
-  add_inf_cmd  <- paste0("/home/", user_name, "/user_venv/bin/python ./inst/additional_inf.py -f ", output_filename_base, "_", type, ".lst -o ", output_filename_base, "_", type, ".tsv")
+  use_virtualenv(venv)
+  source_python(system.file("additional_inf.py", package = "PubmedScraper"))
+  data_table_add_inf <- main_foo(local_PMID)
 
-  # Запускаем скрипт, подгружающий дополнительную информацию о публикации
-  system(add_inf_cmd)
 
   # Загружаем полученную информацию и мерджим как дополнительные поля к нашей таблице
-  data_table_add_inf <- read.csv(paste0(output_filename_base, "_", type, ".tsv"), sep = '\t')
   data_table_with_add_inf <- merge(data_table, data_table_add_inf)
-
-  # Чистим временные файлы
-  rm_cmd1 <- paste0("rm ", output_filename_base, "_", type, ".tsv")
-  rm_cmd2 <- paste0("rm ", output_filename_base, "_", type, ".lst")
-
-  system(rm_cmd1)
-  system(rm_cmd2)
 
   return(data_table_with_add_inf)
 }

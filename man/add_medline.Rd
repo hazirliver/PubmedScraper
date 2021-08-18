@@ -4,14 +4,12 @@
 \alias{add_medline}
 \title{Adding additional Medline info}
 \usage{
-add_medline(data_table, output_filename_base, type)
+add_medline(data_table, venv)
 }
 \arguments{
 \item{data_table}{A data.frame that will supplement with additional Medline information.}
 
-\item{output_filename_base}{A character same as filename_base from \code{\link{scrap_pubmed}}}
-
-\item{type}{Either cited_by either references to specify data.frame.}
+\item{venv}{A character specifies your python's venv in which installed biopython and pandas.}
 }
 \value{
 A data.frame with merged additional Medline info

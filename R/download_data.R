@@ -4,7 +4,6 @@
 #' @description Download data about papers that cites input paper from PubMed by its PMID.
 #'
 #' @importFrom rentrez entrez_link
-#' @importFrom reshape2 melt
 #'
 #' @param PMID A single character or integer of interests paper.
 #' @param type One of "cited_by" or "references" to specify output info.
@@ -53,6 +52,7 @@ download_data <- function(PMID, type = c("cited_by", "references"))
 #' by PMID character vector with \code{\link{download_data}} and returns data.frame.
 #'
 #' @importFrom dplyr bind_rows
+#' @importFrom reshape2 melt
 #'
 #' @param PMID_list A character vector of PMIDs of interests papers.
 #'
@@ -83,7 +83,7 @@ cited_by  <- function(PMID_list)
 #' by PMID character vector with \code{\link{download_data}} and returns data.frame.
 #'
 #' @importFrom dplyr bind_rows
-#'
+#' @importFrom reshape2 melt
 #' @param PMID_list A character vector of PMIDs of interests papers.
 #'
 #' @return If available data is not \code{NULL}.

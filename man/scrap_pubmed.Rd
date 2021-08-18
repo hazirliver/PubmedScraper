@@ -7,6 +7,7 @@
 scrap_pubmed(
   PMID_list,
   filename_base,
+  venv,
   n_cites_threshold = 2,
   n_refers_treshold = 2
 )
@@ -15,6 +16,8 @@ scrap_pubmed(
 \item{PMID_list}{A character vector of PMIDs of interesting papers.}
 
 \item{filename_base}{A character contains path to output and filename base}
+
+\item{venv}{A character specifies your python's venv in which installed biopython and pandas.}
 
 \item{n_cites_threshold}{An integer. The minimum number of papers that a given article should refer to.}
 
