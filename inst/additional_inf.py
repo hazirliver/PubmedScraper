@@ -4,7 +4,7 @@
 #from bio import Medline
 
 def check_pcg():
-    return(print(help("modules")))
+    return((help("modules"))
 
 
 def main_foo(pmids_lst):
