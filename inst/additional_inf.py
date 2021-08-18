@@ -1,7 +1,7 @@
-#import argparse
-#import pandas as pd
-#from bio import Entrez
-#from bio import Medline
+import argparse
+import pandas as pd
+from Bio import Entrez
+from Bio import Medline
 
 def check_pcg():
     return(help("modules"))
@@ -21,5 +21,5 @@ def main_foo(pmids_lst):
 
 if __name__ == '__main__':
     print(help("modules"))
-    #Entrez.email = "Your.Name.Here@example.org"
+    Entrez.email = "Your.Name.Here@example.org"
 
