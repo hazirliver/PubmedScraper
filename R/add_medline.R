@@ -10,12 +10,16 @@
 #' @return A data.frame with merged additional Medline info
 #'
 #'
-add_medline <- function(data_table, venv)
+add_medline <- function(data_table)
 {
   local_PMID <- data_table %>%
     pull(PMID)
 
-  use_virtualenv(venv)
+  user_name <- system('echo "$USER"', intern = T)
+  venv1 <- paste0("/home/", user_name, "/user_venv/bin/python")
+  use_python(venv1, required = T)
+
+
   source_python(system.file("additional_inf.py", package = "PubmedScraper"))
   data_table_add_inf <- main_foo(local_PMID)
 

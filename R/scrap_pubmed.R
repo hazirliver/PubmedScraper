@@ -13,16 +13,14 @@
 #'
 scrap_pubmed <- function(PMID_list, filename_base, venv, n_cites_threshold = 2, n_refers_treshold = 2)
 {
-  use_virtualenv(venv)
-  source_python(system.file("additional_inf.py", package = "PubmedScraper"))
-  return(check_pcg())
-  #cit_tab <- graph_foo_citation(PMID_list, filename_base, n_cites_threshold)
-  #cit_tab_medline <- add_medline(cit_tab, venv)
+
+  cit_tab <- graph_foo_citation(PMID_list, filename_base, n_cites_threshold)
+  cit_tab_medline <- add_medline(cit_tab)
 
 
 
-  #references_tab <- graph_foo_references(PMID_list, filename_base, n_refers_treshold)
-  #references_tab_medline <- add_medline(references_tab, venv)
+  references_tab <- graph_foo_references(PMID_list, filename_base, n_refers_treshold)
+  references_tab_medline <- add_medline(references_tab)
 
   return(list(cit_tab_medline, references_tab_medline))
 
