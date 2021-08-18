@@ -11,6 +11,8 @@
 #'
 scrap_pubmed <- function(PMID_list, filename_base, venv, n_cites_threshold = 2, n_refers_treshold = 2)
 {
+  use_virtualenv(venv)
+  source_python(system.file("additional_inf.py", package = "PubmedScraper"))
   return(check_pcg())
   #cit_tab <- graph_foo_citation(PMID_list, filename_base, n_cites_threshold)
   #cit_tab_medline <- add_medline(cit_tab, venv)
