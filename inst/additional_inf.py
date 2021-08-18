@@ -3,20 +3,23 @@
 #from bio import Entrez
 #from bio import Medline
 
+def check_pcg():
+    return(print(help("modules")))
+
 
 def main_foo(pmids_lst):
-    #handle = Entrez.efetch(db='pubmed', id=pmids_lst, rettype='medline', retmode='text')
-    #records = Medline.parse(handle)
-    
-    print(help("modules"))
+    handle = Entrez.efetch(db='pubmed', id=pmids_lst, rettype='medline', retmode='text')
+    records = Medline.parse(handle)
 
-    #df = pd.DataFrame(records)
-    #return(df)
+    
+
+    df = pd.DataFrame(records)
+    return(df)
 
 
 
 
 if __name__ == '__main__':
     print(help("modules"))
-    #Entrez.email = "Your.Name.Here@example.org"
+    Entrez.email = "Your.Name.Here@example.org"
 
