@@ -22,7 +22,7 @@ graph_foo_references <- function(PMID_list, output_filename_base, n_refers_tresh
   # Считаем степень вершины, как количество статей, которые процитировали заданную статью
   # Количество стрелочек Входящих в вершину
   df.g_references <- graph.data.frame(d = references_table, directed = T)
-  deg_references <- degree(df.g_references, mode="in")
+  deg_references <- degree(df.g_references, mode="out")
 
 
   ### Построение рисунка графа
