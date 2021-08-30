@@ -12,7 +12,6 @@
 #' @param n_refers_treshold An integer. The minimum number of papers that a given article should refer to.
 #'
 #' @return A data.frame with info about papers that refer to a given \code{PMID_list}.
-#' @export
 graph_foo_references <- function(PMID_list, output_filename_base, n_refers_treshold = 2)
 {
   # Качаем информацию о том, на какие статьи ссылается каждая статья из заданного пула
