@@ -18,6 +18,8 @@ add_medline <- function(data_table)
   venv1 <- paste0("/home/", user_name, "/user_venv/bin/python")
   py_install("biopython", pip = TRUE)
   py_module_available("biopython")
+  py_install("Bio", pip = TRUE)
+  py_module_available("Bio")
   use_python(venv1, required = T)
 
 
