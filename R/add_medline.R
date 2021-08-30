@@ -15,11 +15,11 @@ add_medline <- function(data_table)
     pull(PMID)
 
   user_name <- system('echo "$USER"', intern = T)
-  venv1 <- paste0("/home/", user_name, "/user_venv/bin/python3")
+  venv1 <- paste0("/home/", user_name, "/user_venv/bin/python")
   use_python(venv1, required = T)
 
 
-  source_python(system.file("additional_inf.py", package = "PubmedScraper"))
+  source_python(system.file("additional_inf.py", package = "PubmedScraper"), envir = venv1)
   data_table_add_inf <- main_foo(local_PMID)
 
 
