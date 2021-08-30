@@ -15,11 +15,7 @@ add_medline <- function(data_table)
     pull(PMID)
 
   user_name <- system('echo "$USER"', intern = T)
-  venv1 <- paste0("/home/", user_name, "/user_venv/bin/python")
-  py_install("biopython", pip = TRUE)
-  py_module_available("biopython")
-  py_install("Bio", pip = TRUE)
-  py_module_available("Bio")
+  venv1 <- paste0("/home/", user_name, "/user_venv/bin/python3")
   use_python(venv1, required = T)
 
 
