@@ -7,7 +7,7 @@
 #' @param data_table A data.frame that will supplement with additional Medline information.
 #'
 #' @return A data.frame with merged additional Medline info
-#'
+#' @export
 #'
 add_medline <- function(data_table)
 {
