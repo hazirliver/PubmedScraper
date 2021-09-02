@@ -52,9 +52,8 @@ graph_foo_references <- function(PMID_list, output_filename_base, n_refers_tresh
   # Фильруем по минимальному количеству статей, на которые должна ссылаться заданная статья
   # Получаем список отобранных PMID для дальнейшего прогона
   double_info_pmid_list <- deg_to_csv %>%
-    filter(n_refers > n_refers_treshold) %>%
-    select(PMID) %>%
-    pull()
+    dplyr::filter(n_refers > n_refers_treshold) %>%
+    pull(PMID)
 
   # Получаем аналогичную data_table табличку для отобранных ранее PMID
   double_info_data_table <- cited_by(double_info_pmid_list)
