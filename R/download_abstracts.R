@@ -1,5 +1,6 @@
 #' Downloading abstracts by PMID list
 #'
+#'
 #' @param PMID_list A character vector PMIDs
 #'
 #' @importFrom rentrez entrez_fetch
