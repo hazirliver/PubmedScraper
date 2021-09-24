@@ -12,7 +12,6 @@
 #'
 scrap_pubmed <- function(PMID_list, filename_base, n_cites_threshold = 2, n_refers_treshold = 2)
 {
-
   PMID_list <- unique(PMID_list)
 
   cit_tab <- graph_foo_citation(PMID_list, filename_base, n_cites_threshold)

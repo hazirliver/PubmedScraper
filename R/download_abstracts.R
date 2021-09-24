@@ -16,6 +16,7 @@ download_abstracts <- function(PMID_list){
   abstracts <-  xpathApply(fetch.pubmed, '//PubmedArticle//Article', function(x)
     xmlValue(xmlChildren(x)$Abstract))
 
+
   names(abstracts) <- your.ids
 
 
