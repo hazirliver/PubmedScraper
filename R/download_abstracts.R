@@ -21,6 +21,7 @@ download_abstracts <- function(PMID_list){
 
 
   abstracts.df <- stack(abstracts)
+
   colnames(abstracts.df) <- c("Abstract", "PMID")
 
   return(abstracts.df[c("PMID", "Abstract")])
