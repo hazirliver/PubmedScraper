@@ -17,7 +17,7 @@ download_abstracts <- function(PMID_list){
     xmlValue(xmlChildren(x)$Abstract))
 
 
-  names(abstracts) <- your.ids
+  names(abstracts) <- PMID_list
 
 
   abstracts.df <- stack(abstracts)
