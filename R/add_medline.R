@@ -4,6 +4,7 @@
 #' @importFrom utils read.csv write.table
 #' @importFrom reticulate use_python source_python
 #' @importFrom dplyr mutate
+#' @importFrom anytime anydate
 #'
 #' @param data_table A data.frame that will supplement with additional Medline information.
 #'
