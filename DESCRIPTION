@@ -9,7 +9,7 @@ Description: More about what it does (maybe more than one line)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports:  
+Imports: 
     dplyr,
     grDevices,
     igraph,
@@ -18,7 +18,7 @@ Imports:
     reticulate,
     stringr,
     XML
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Suggests: 
     rmarkdown,
     knitr

@@ -14,8 +14,6 @@ scrap_pubmed <- function(PMID_list, filename_base, n_cites_threshold = 2, n_refe
 {
   PMID_list <- unique(PMID_list)
 
-  PMID_list <- unique(PMID_list)
-
   cit_tab <- graph_foo_citation(PMID_list, filename_base, n_cites_threshold)
   cit_tab_medline <- add_medline(cit_tab)
 
@@ -24,6 +22,16 @@ scrap_pubmed <- function(PMID_list, filename_base, n_cites_threshold = 2, n_refe
   references_tab <- graph_foo_references(PMID_list, filename_base, n_refers_treshold)
   references_tab_medline <- add_medline(references_tab)
 
-  return(list(cit_tab_medline, references_tab_medline))
+
+  similar_tab <- graph_foo_similar(PMID_list,
+                                   filename_base,
+                                   n_similar_threshold = 1,
+                                   year_left,
+                                   year_right = substr(Sys.Date(), 1, 4))
+  similar_tab_mdeline <- add_medline(similar_tab)
+
+  return(list(`Цитируют` = cit_tab_medline,
+              `Ссылаются` = references_tab_medline,
+              `Похожие` = similar_tab_mdeline))
 
 }
