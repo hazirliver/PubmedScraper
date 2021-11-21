@@ -10,7 +10,10 @@
 #' @return List of two data.frame's. First -- about papers that cites given \code{PMID_list}, second -- about papers on which refer given \code{PMID_list}.
 #' @export
 #'
-scrap_pubmed <- function(PMID_list, filename_base, n_cites_threshold = 2, n_refers_treshold = 2)
+scrap_pubmed <- function(PMID_list, filename_base,
+                         n_cites_threshold = 2, n_refers_treshold = 2,
+                         year_left,
+                         year_right = substr(Sys.Date(), 1, 4))
 {
   PMID_list <- unique(PMID_list)
 
