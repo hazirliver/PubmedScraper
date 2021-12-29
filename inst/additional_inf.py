@@ -12,6 +12,6 @@ def main_foo(pmids_lst):
 
 
 if __name__ == '__main__':
-    print(help("modules"))
+    #print(help("modules"))
     Entrez.email = "Your.Name.Here@example.org"
 
