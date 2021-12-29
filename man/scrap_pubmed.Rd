@@ -8,7 +8,9 @@ scrap_pubmed(
   PMID_list,
   filename_base,
   n_cites_threshold = 2,
-  n_refers_treshold = 2
+  n_refers_treshold = 2,
+  year_left,
+  year_right = substr(Sys.Date(), 1, 4)
 )
 }
 \arguments{

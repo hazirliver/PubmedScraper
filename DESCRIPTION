@@ -17,7 +17,9 @@ Imports:
     reshape2,
     reticulate,
     stringr,
-    XML
+    XML,
+    anytime,
+    rvest
 RoxygenNote: 7.1.2
 Suggests: 
     rmarkdown,
