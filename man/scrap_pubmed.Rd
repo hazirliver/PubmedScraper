@@ -9,6 +9,7 @@ scrap_pubmed(
   filename_base,
   n_cites_threshold = 2,
   n_refers_treshold = 2,
+  pubmed_api_key,
   year_left,
   year_right = substr(Sys.Date(), 1, 4)
 )
@@ -21,6 +22,8 @@ scrap_pubmed(
 \item{n_cites_threshold}{An integer. The minimum number of papers that a given article should refer to.}
 
 \item{n_refers_treshold}{An integer. The minimum number of papers that a given article should refer to.}
+
+\item{pubmed_api_key}{Your pubmed API key.}
 }
 \value{
 List of two data.frame's. First -- about papers that cites given \code{PMID_list}, second -- about papers on which refer given \code{PMID_list}.

@@ -4,6 +4,8 @@
 #' @param filename_base A character contains path to output and filename base
 #' @param n_cites_threshold An integer. The minimum number of papers that a given article should refer to.
 #' @param n_refers_treshold An integer. The minimum number of papers that a given article should refer to.
+#' @param pubmed_api_key Your pubmed API key.
+#'
 #'
 #' @import reticulate
 #'
