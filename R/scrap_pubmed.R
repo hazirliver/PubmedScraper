@@ -12,10 +12,13 @@
 #'
 scrap_pubmed <- function(PMID_list, filename_base,
                          n_cites_threshold = 2, n_refers_treshold = 2,
+                         pubmed_api_key,
                          year_left,
                          year_right = substr(Sys.Date(), 1, 4))
 {
   PMID_list <- unique(PMID_list)
+
+  set_entrez_key(pubmed_api_key)
 
   cit_tab <- graph_foo_citation(PMID_list, filename_base, n_cites_threshold)
   cit_tab_medline <- add_medline(cit_tab)
