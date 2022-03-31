@@ -4,7 +4,7 @@
 \alias{full_text}
 \title{Get full text of PMC papers}
 \usage{
-full_text(PMC_list, Collapse = T)
+full_text(PMC_list, Collapse = F)
 }
 \arguments{
 \item{PMC_list}{A character vector of PMCs.}

@@ -4,7 +4,7 @@
 \alias{pic_captures}
 \title{Get pictures captures PMC papers}
 \usage{
-pic_captures(PMC_list, Collapse = T)
+pic_captures(PMC_list, Collapse = F)
 }
 \arguments{
 \item{PMC_list}{A character vector of PMCs.}

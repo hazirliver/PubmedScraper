@@ -2,6 +2,7 @@
 
 export(add_medline)
 export(cited_by)
+export(collapse_df)
 export(download_abstracts)
 export(download_data)
 export(download_similar)

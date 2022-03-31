@@ -6,7 +6,7 @@
 #'
 #' @return List of full texts of \code{PMC_list}.
 #' @export
-full_text <- function(PMC_list, Collapse = T){
+full_text <- function(PMC_list, Collapse = F){
   get_full_text <- function(PMC){
     doc <- pmc_xml(PMC)
     txt <- pmc_text(doc)
@@ -39,7 +39,7 @@ full_text <- function(PMC_list, Collapse = T){
 #'
 #' @return List of pictures captures of \code{PMC_list}.
 #' @export
-pic_captures <- function(PMC_list, Collapse = T){
+pic_captures <- function(PMC_list, Collapse = F){
   get_pic_captures <- function(PMC){
     doc <- pmc_xml(PMC)
     cap <- pmc_caption(doc)
@@ -62,3 +62,26 @@ pic_captures <- function(PMC_list, Collapse = T){
   pic_captures_out
 }
 
+
+
+
+#' @title Collapse uncollapsed dfs from \code{full_text} or \code{pic_captures}
+#' @import dplyr
+#'
+#' @param dfs_list A character vector of PMCs.
+#'
+#' @return List of pictures captures of \code{PMC_list}.
+#' @export
+collapse_df <- function(dfs_list){
+
+  collapse_df <- function(df){
+    cap_sec <- df %>%
+      summarise(text=paste(text,collapse='')) %>%
+      pull(text)
+
+  }
+
+  collapsed_out <- lapply(dfs_list, collapse_df)
+  names(collapsed_out) <- dfs_list
+  collapsed_out
+}
