@@ -19,7 +19,8 @@ Imports:
     stringr,
     XML,
     anytime,
-    rvest
+    rvest,
+    tidypmc
 RoxygenNote: 7.1.2
 Suggests: 
     rmarkdown,

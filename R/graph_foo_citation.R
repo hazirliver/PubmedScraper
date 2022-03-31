@@ -33,21 +33,21 @@ graph_foo_citation <- function(PMID_list, output_filename_base, n_cites_threshol
   deg <- degree(df.g, mode = "out")
 
 
-  ### Построение рисунка графа
-  svg(paste0(output_filename_base, "_cited_by.svg"), width = 20, height = 25)
-
-  # Прозрачная заливка
-  # Красная граница -- изначальный пул, черная -- новые статьи
-  V(df.g)$color <- NA
-  bc <- ifelse(str_detect(names(deg),paste0(PMID_list, collapse = "|")), "red", "black")
-
-
-
-  plot.igraph(df.g, vertex.frame.color=bc, layout=layout_nicely,
-              vertex.label = NA, vertex.size=deg, edge.arrow.size = 0.5)
-
-  dev.off()
-  ###
+  # ### Построение рисунка графа
+  # svg(paste0(output_filename_base, "_cited_by.svg"), width = 20, height = 25)
+  #
+  # # Прозрачная заливка
+  # # Красная граница -- изначальный пул, черная -- новые статьи
+  # V(df.g)$color <- NA
+  # bc <- ifelse(str_detect(names(deg),paste0(PMID_list, collapse = "|")), "red", "black")
+  #
+  #
+  #
+  # plot.igraph(df.g, vertex.frame.color=bc, layout=layout_nicely,
+  #             vertex.label = NA, vertex.size=deg, edge.arrow.size = 0.5)
+  #
+  # dev.off()
+  # ###
 
 
   # Для дальнейшей работы используется вся информация (без удаления вершин)
