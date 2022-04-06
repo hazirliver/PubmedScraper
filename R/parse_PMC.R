@@ -8,7 +8,8 @@
 #' @export
 full_text <- function(PMC_list, Collapse = F){
   get_full_text <- function(PMC){
-    doc <- pmc_xml(PMC)
+    doc <- tryCatch(pmc_xml(PMC))
+    Sys.sleep(2)
     txt <- pmc_text(doc)
 
     if (Collapse)
